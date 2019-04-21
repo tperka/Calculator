@@ -1,6 +1,26 @@
+/**
+ * 	@file Operations.c
+ * 	@brief This source file will contain mathematical operations on DynArrays. 
+ * 
+ * 	@author Tymoteusz Perka
+ *
+ * 	@date 26/03/2019
+ **/
 #include "Arrays_management.h"
 #include "Operations.h"
-
+/**
+ * @brief This is something like overloaded + operator for our struct.
+ * 
+ * At the beggining it reverses both arrays and checks if arr1 and arr2 have the same number of elements.
+ * If not, it fills the smaller one with zeros and then the addition is done from left to right (since our
+ * arrays are reversed) the same way you do it by your hand (summing numbers on every position and carrying
+ * overflow).
+ * 
+ * @warning Both arr1 and arr2 are freed after this operation.
+ * 
+ * @param Two arrays we want to add. 
+ * @return Pointer to DynArray which is result of adding numbers stored in arr1 and arr2.
+ */
 DynArray* addition(DynArray* arr1, DynArray* arr2)
 {
 	DynArray* result = createDynArray();
@@ -34,7 +54,21 @@ DynArray* addition(DynArray* arr1, DynArray* arr2)
 	freeDynArray(arr2);
 	return result;
 }
-
+/**
+ * @brief This is something like overloaded - operator for our struct.
+ * 
+ * At the beggining it checks which array stores larger number, reverses both arrays and checks if arr1 and arr2 have the same number of elements.
+ * If not, it fills the smaller one with zeros and then the subtraction is done from left to right (since our
+ * arrays are reversed) the same way you do it by your hand (subtracting numbers on every position and filling underflow by borrowing).
+ * 
+ * @note This operation always returns positive number or zero since we subtract smaller number
+ * 		 from bigger number.
+ * 
+ * @warning Both arr1 and arr2 are freed after this operation.
+ * 
+ * @param Two arrays we want to subtract. 
+ * @return Pointer to DynArray which is result of subtracting number stored in arr2 from arr1.
+ */
 DynArray* subtraction(DynArray* arr1, DynArray* arr2)
 {
 	DynArray* result = createDynArray();
@@ -109,13 +143,25 @@ DynArray* subtraction(DynArray* arr1, DynArray* arr2)
 	freeDynArray(arr2);
 	return result;
 }
-
+/**
+ * @brief This is something like overloaded * operator for our struct.
+ * 
+ * At the beggining it checks if any of DynArrays represents zero. If yes, it returns 0 no matter what second array looks like. Otherwise it reverses arrays and
+ * then the multiplication is done from left to right (since our arrays are reversed) the same way you do it by your hand:
+ * Firstly, help array is created. Then all digits in arr1 are multiplied by the last digit in arr2, carring overflow to the next position and storing result as help.
+ * Then help is reversed and filled with as many zeros as iterations of the loop (which is also the position of number of arr 2 which we multiplicated by)
+ * and added to result. It repeats arr2->used times.
+ * 
+ * @warning Both arr1 and arr2 are freed after this operation.
+ * 
+ * @param Two arrays we want to multiply. 
+ * @return Pointer to DynArray which is result of multiplying numbers stored in arr1 and arr2.
+ */
 DynArray* multiply(DynArray* arr1, DynArray* arr2)
 {
 	DynArray* result = createDynArray();
 	insertDynArray(result, 0);
-	arr1 = DelZeros(arr1);
-	arr2 = DelZeros(arr2);
+
         if(arr1->array[0] == 0 || arr2->array[0] == 0)
         {
         	freeDynArray(arr1);
@@ -150,10 +196,20 @@ DynArray* multiply(DynArray* arr1, DynArray* arr2)
         	result = addition(result, help);
         }
 	freeDynArray(arr1);
-        freeDynArray(arr2);
+    freeDynArray(arr2);
 	return result;
 }
-
+/**
+ * @brief This function returns factorial of number stored in arr.
+ * 
+ * At the beginning it creates two DynArrays- counter and result, filling counter with 0 and result with 1. Then a copy of arr is done, help array created
+ * and initialised with 1. Result and arrcopy are multiplicated and stored as result and number stored in arr is reduced by one using help array(something like --).
+ * It is repeated as long as arr != 0.
+ * @warning Both arr is freed after this operation.
+ * 
+ * @param Array we want to take factorial from. 
+ * @return Pointer to DynArray which is result of factorial.
+ */
 DynArray* factorial(DynArray* arr)
 {
 	DynArray* result = createDynArray();

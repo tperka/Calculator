@@ -1,9 +1,19 @@
+/**
+ * 	@file Arrays_management.h
+ * 	@brief This header file will contain definition of struct used
+ * 	inf whole program and functions operating on them (something like methods)
+ *
+ * 	@author Tymoteusz Perka
+ *
+ * 	@date 26/03/2019
+ */
+
 #ifndef ARRAYS_MANAGEMENT_H
 #define ARRAYS_MANAGEMENT_H
 
 #include <stdlib.h>
 
-typedef struct 
+typedef struct
 {
 	char *array;
     size_t used;

@@ -3,7 +3,14 @@
 #include <string.h>
 
 #include "Interface.h"
-
+/**
+ * @brief Checks if allocation of memory was succesful.
+ * 
+ * It simply checks if pointer isn't NULL after malloc or realloc.
+ * If yes, it shuts down the program.
+ * 
+ * @param p pointer we tried to allocate memory for.
+ */
 void* AllocCheck(void *p)
 {
 	if(!p)
@@ -13,14 +20,21 @@ void* AllocCheck(void *p)
 	}
 	return p;
 }
-
+/**
+ * @brief Cleans buffer after using scanf().
+ * 
+ */
 void cleanBuff()
 {
 	char c = getchar();
 	while( c != '\n')
 		c = getchar();
 }
-
+/**
+ * @brief It checks if user passed valid answer to yes/no question.
+ * 
+ * @param ar string taken from stdin using scanf().
+ */
 void scanChar(char ar[])
 {
 	while(scanf("%2[^\n]", ar) == 0 || strlen(ar) > 1 || (ar[0] != 'y' && ar[0] != 'n'))
@@ -30,7 +44,11 @@ void scanChar(char ar[])
 	}
 	cleanBuff();
 }
-
+/**
+ * @brief 
+ * 
+ * @param res 
+ */
 void ask(char* res)
 {
 	printf("Do you want to use the previous result? (y/n)\n");

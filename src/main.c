@@ -27,7 +27,7 @@ int main(void)
 		
 		while(scanf("%2[^\n]", menu) == 0 || strlen(menu) > 1 || menu[0] >'5' || menu[0] < '1')
 		{
-			printf("Unavaible command. Użyj liczby z zakresu 1-5. Spróbuj ponownie.\n");
+			printf("Unavaible command. Use integer in range of 1-5. Try again.\n");
 			cleanBuff();
 		}
 		cleanBuff();
@@ -230,7 +230,7 @@ int main(void)
 			{
 				if(result->array[0] < 0)
 				{
-					err = 2;
+					err = 1;
 					result = cleanArray(result);
 				}
 				else
