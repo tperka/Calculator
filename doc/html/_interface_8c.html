@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.13"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>My Project: src/Interface.c File Reference</title>
+<title>Large ints calculator: /home/tperka/Workspace/Projekt/src/Interface.c File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -28,7 +28,7 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">My Project
+   <div id="projectname">Large ints calculator
    </div>
   </td>
  </tr>
@@ -80,42 +80,68 @@ $(document).ready(function(){initNavTree('_interface_8c.html','');});
 
 <div class="header">
   <div class="summary">
+<a href="#define-members">Macros</a> &#124;
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
 <div class="title">Interface.c File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Basically functions that operate on input from user.  
+<a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;stdio.h&gt;</code><br />
 <code>#include &lt;stdlib.h&gt;</code><br />
 <code>#include &lt;string.h&gt;</code><br />
 <code>#include &quot;Interface.h&quot;</code><br />
-</div><div class="textblock"><div class="dynheader">
-Include dependency graph for Interface.c:</div>
-<div class="dyncontent">
-<div class="center"><img src="_interface_8c__incl.png" border="0" usemap="#src_2_interface_8c" alt=""/></div>
-<map name="src_2_interface_8c" id="src_2_interface_8c">
-</map>
-</div>
 </div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:a5977928b042d0a4b2ce93baa979e5f5c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_interface_8c.html#a5977928b042d0a4b2ce93baa979e5f5c">LIMIT</a>&#160;&#160;&#160;1000</td></tr>
+<tr class="separator:a5977928b042d0a4b2ce93baa979e5f5c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:a0e8da15c16ef11bcda8be961a5b95f5a"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_interface_8c.html#a0e8da15c16ef11bcda8be961a5b95f5a">AllocCheck</a> (void *p)</td></tr>
+<tr class="memdesc:a0e8da15c16ef11bcda8be961a5b95f5a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if allocation of memory was succesful.  <a href="#a0e8da15c16ef11bcda8be961a5b95f5a">More...</a><br /></td></tr>
 <tr class="separator:a0e8da15c16ef11bcda8be961a5b95f5a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3f7b9ae1147745994c98a4b6eb702610"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_interface_8c.html#a3f7b9ae1147745994c98a4b6eb702610">cleanBuff</a> ()</td></tr>
+<tr class="memdesc:a3f7b9ae1147745994c98a4b6eb702610"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cleans buffer after using scanf().  <a href="#a3f7b9ae1147745994c98a4b6eb702610">More...</a><br /></td></tr>
 <tr class="separator:a3f7b9ae1147745994c98a4b6eb702610"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0fa092372a4cd45af3987561bd5b5907"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_interface_8c.html#a0fa092372a4cd45af3987561bd5b5907">scanChar</a> (char ar[])</td></tr>
-<tr class="separator:a0fa092372a4cd45af3987561bd5b5907"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af9446eed2f9bf869181a4b9be9d29d6b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_interface_8c.html#af9446eed2f9bf869181a4b9be9d29d6b">ask</a> (char *res)</td></tr>
-<tr class="separator:af9446eed2f9bf869181a4b9be9d29d6b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adc90c96a36cf04021b0b8b32bcc86410"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_interface_8c.html#adc90c96a36cf04021b0b8b32bcc86410">ask</a> (char *ar)</td></tr>
+<tr class="memdesc:adc90c96a36cf04021b0b8b32bcc86410"><td class="mdescLeft">&#160;</td><td class="mdescRight">It give user a question and checks if user passed valid answer to it.  <a href="#adc90c96a36cf04021b0b8b32bcc86410">More...</a><br /></td></tr>
+<tr class="separator:adc90c96a36cf04021b0b8b32bcc86410"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a21cc4a1100a66030916c28d6199b6c9e"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_interface_8c.html#a21cc4a1100a66030916c28d6199b6c9e">isInt</a> (char c)</td></tr>
+<tr class="memdesc:a21cc4a1100a66030916c28d6199b6c9e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if character represents a number or - sign.  <a href="#a21cc4a1100a66030916c28d6199b6c9e">More...</a><br /></td></tr>
 <tr class="separator:a21cc4a1100a66030916c28d6199b6c9e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:add9570c6b9a9bf833f293fc8e207395e"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_interface_8c.html#add9570c6b9a9bf833f293fc8e207395e">loadInt</a> (char *str, DynArray *arr)</td></tr>
+<tr class="memdesc:add9570c6b9a9bf833f293fc8e207395e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts number stored in string to DynArray.  <a href="#add9570c6b9a9bf833f293fc8e207395e">More...</a><br /></td></tr>
 <tr class="separator:add9570c6b9a9bf833f293fc8e207395e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a81d80b35397a59c3c6e7537490141fda"><td class="memItemLeft" align="right" valign="top">DynArray *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_interface_8c.html#a81d80b35397a59c3c6e7537490141fda">checkSign</a> (DynArray *arr)</td></tr>
+<tr class="memdesc:a81d80b35397a59c3c6e7537490141fda"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks the sign of converted number and flips it, if necessary.  <a href="#a81d80b35397a59c3c6e7537490141fda">More...</a><br /></td></tr>
 <tr class="separator:a81d80b35397a59c3c6e7537490141fda"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae7bd376e9b64b890ff88fb54649ca2d6"><td class="memItemLeft" align="right" valign="top">DynArray *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_interface_8c.html#ae7bd376e9b64b890ff88fb54649ca2d6">scanDynArray</a> (DynArray *arr)</td></tr>
+<tr class="memdesc:ae7bd376e9b64b890ff88fb54649ca2d6"><td class="mdescLeft">&#160;</td><td class="mdescRight">This function takes and converts input from user.  <a href="#ae7bd376e9b64b890ff88fb54649ca2d6">More...</a><br /></td></tr>
 <tr class="separator:ae7bd376e9b64b890ff88fb54649ca2d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Basically functions that operate on input from user. </p>
+<dl class="section author"><dt>Author</dt><dd>Tymoteusz Perka</dd></dl>
+<dl class="section date"><dt>Date</dt><dd>26/03/2019 </dd></dl>
+</div><h2 class="groupheader">Macro Definition Documentation</h2>
+<a id="a5977928b042d0a4b2ce93baa979e5f5c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5977928b042d0a4b2ce93baa979e5f5c">&#9670;&nbsp;</a></span>LIMIT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LIMIT&#160;&#160;&#160;1000</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <h2 class="groupheader">Function Documentation</h2>
 <a id="a0e8da15c16ef11bcda8be961a5b95f5a"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a0e8da15c16ef11bcda8be961a5b95f5a">&#9670;&nbsp;</a></span>AllocCheck()</h2>
@@ -133,10 +159,19 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Checks if allocation of memory was succesful. </p>
+<p>It simply checks if pointer isn't NULL after malloc or realloc. If yes, it shuts down the program.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">p</td><td>pointer we tried to allocate memory for. </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
-<a id="af9446eed2f9bf869181a4b9be9d29d6b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af9446eed2f9bf869181a4b9be9d29d6b">&#9670;&nbsp;</a></span>ask()</h2>
+<a id="adc90c96a36cf04021b0b8b32bcc86410"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adc90c96a36cf04021b0b8b32bcc86410">&#9670;&nbsp;</a></span>ask()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -145,11 +180,19 @@ Functions</h2></td></tr>
           <td class="memname">void ask </td>
           <td>(</td>
           <td class="paramtype">char *&#160;</td>
-          <td class="paramname"><em>res</em></td><td>)</td>
+          <td class="paramname"><em>ar</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>It give user a question and checks if user passed valid answer to it. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ar</td><td>string we will load the answer to </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -169,6 +212,16 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Checks the sign of converted number and flips it, if necessary. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">arr</td><td>array that just has been converted using <a class="el" href="_interface_8c.html#add9570c6b9a9bf833f293fc8e207395e" title="Converts number stored in string to DynArray. ">loadInt()</a> function(since loadInt leaves -1 at the beginning if number is negative). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Pointer to the same DynArray without first element and with second having flipped sign.</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>Use it the same way as DelFirstZeros(). </dd></dl>
+
 </div>
 </div>
 <a id="a3f7b9ae1147745994c98a4b6eb702610"></a>
@@ -185,6 +238,8 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Cleans buffer after using scanf(). </p>
 
 </div>
 </div>
@@ -203,6 +258,9 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Checks if character represents a number or - sign. </p>
+<dl class="section return"><dt>Returns</dt><dd>int value represented by digit in c, -1 if it is - sign or 10 otherwise. </dd></dl>
 
 </div>
 </div>
@@ -232,23 +290,16 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-</div>
-</div>
-<a id="a0fa092372a4cd45af3987561bd5b5907"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0fa092372a4cd45af3987561bd5b5907">&#9670;&nbsp;</a></span>scanChar()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void scanChar </td>
-          <td>(</td>
-          <td class="paramtype">char&#160;</td>
-          <td class="paramname"><em>ar</em>[]</td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
+<p>Converts number stored in string to DynArray. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">str</td><td>string passed by user to stdin. </td></tr>
+    <tr><td class="paramname">arr</td><td>array in which we will store number passed by user. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>int 1 if convertion was succesful, 0 otherwise.</dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>You can't pass number that has &gt;1000 digits. </dd></dl>
 
 </div>
 </div>
@@ -267,6 +318,17 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>This function takes and converts input from user. </p>
+<p>It uses funtions above to take input from user and convert it into number stored in DynArray, checking correctness of input.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">arr</td><td>an instance of our struct we wanna load to. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Pointer to array passed as argument, with number loaded to it.</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>Use it the same way as DelFirstZeros(). </dd></dl>
 
 </div>
 </div>

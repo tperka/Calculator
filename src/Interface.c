@@ -1,8 +1,17 @@
+/**
+ * 	@file Interface.c
+ * 	@brief Basically functions that operate on input from user. 
+ * 
+ * 	@author Tymoteusz Perka
+ *
+ * 	@date 26/03/2019
+ **/
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 
 #include "Interface.h"
+#define LIMIT 1000
 /**
  * @brief Checks if allocation of memory was succesful.
  * 
@@ -31,12 +40,13 @@ void cleanBuff()
 		c = getchar();
 }
 /**
- * @brief It checks if user passed valid answer to yes/no question.
+ * @brief It give user a question and checks if user passed valid answer to it.
  * 
- * @param ar string taken from stdin using scanf().
- */
-void scanChar(char ar[])
+ * @param ar string we will load the answer to
+ */ 
+void ask(char* ar)
 {
+	printf("Do you want to use the previous result? (y/n)\n");
 	while(scanf("%2[^\n]", ar) == 0 || strlen(ar) > 1 || (ar[0] != 'y' && ar[0] != 'n'))
 	{
 		cleanBuff();
@@ -45,16 +55,10 @@ void scanChar(char ar[])
 	cleanBuff();
 }
 /**
- * @brief 
+ * @brief Checks if character represents a number or - sign.
  * 
- * @param res 
+ * @return int value represented by digit in c, -1 if it is - sign or 10 otherwise. 
  */
-void ask(char* res)
-{
-	printf("Do you want to use the previous result? (y/n)\n");
-	scanChar(res);
-}
-
 int isInt(char c)
 {
 	if(c >= '0' && c <= '9') {
@@ -67,10 +71,18 @@ int isInt(char c)
 	else
 	    return 10;
 }
-
+/**
+ * @brief Converts number stored in string to DynArray.
+ * 
+ * @param str string passed by user to stdin.
+ * @param arr array in which we will store number passed by user.
+ * @return int 1 if convertion was succesful, 0 otherwise.
+ * 
+ * @warning You can't pass number that has >1000 digits.
+ */
 int loadInt(char* str, DynArray* arr)
 {
-	if(strlen(str) > 1000)
+	if(strlen(str) > LIMIT)
 		return 0;
 
 	if(strlen(str) == 1 && str[0] == '-')
@@ -105,7 +117,14 @@ int loadInt(char* str, DynArray* arr)
 	
 	return 1;
 }
-
+/**
+ * @brief Checks the sign of converted number and flips it, if necessary.
+ * 
+ * @param arr array that just has been converted using loadInt() function(since loadInt leaves -1 at the beginning if number is negative).
+ * @return Pointer to the same DynArray without first element and with second having flipped sign.
+ * 
+ * @note Use it the same way as DelFirstZeros().
+ */
 DynArray* checkSign(DynArray* arr)
 {
 	if(arr->array[0] == -1)
@@ -115,12 +134,21 @@ DynArray* checkSign(DynArray* arr)
 	}
 	return arr;
 }
-
+/**
+ * @brief This function takes and converts input from user.
+ * 
+ * It uses funtions above to take input from user and convert it into number stored in DynArray, checking correctness of input.
+ * 
+ * @param arr an instance of our struct we wanna load to.
+ * @return Pointer to array passed as argument, with number loaded to it.
+ * 
+ * @note Use it the same way as DelFirstZeros().
+ */
 DynArray* scanDynArray(DynArray* arr)
 {
 	insertDynArray(arr, 0);
-	char ar[1002];
-	while(scanf("%1001[^\n]", ar) == 0 || loadInt(ar, arr) == 0)
+	char ar[LIMIT + 2];
+	while(scanf("%1001[^\n]", ar) == 0 || loadInt(ar, arr) == 0) //in scanf it should be LIMIT + 1
 	{
 		arr = cleanArray(arr);
 		cleanBuff();

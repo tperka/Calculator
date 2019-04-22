@@ -1,3 +1,24 @@
+/**
+ * 	@file main.c
+ * 	@brief Simply main funtion (look at comments). 
+ * 
+ * 	@author Tymoteusz Perka
+ *
+ * 	@date 26/03/2019
+ **/
+/**
+ * @mainpage Calculator for large integers
+ * @section intro_sec Introduction
+ * 
+ * This program allows you to operate on large integer numbers.
+ * If you want to use it, edit it or whatever, feel free to do it.
+ * I know the code isn't written the best it could but I was beginner
+ * then and didn't know how to write readable and editable code.
+ * Sorry for inconvenience. However, the program works perfect and 
+ * provides great performance and low memory usage.
+*/
+
+
 #include <stdio.h>
 #include <string.h>
 
@@ -9,13 +30,14 @@ int main(void)
 {
 	DynArray* result = createDynArray();
 	insertDynArray(result, 0);
-	char err = 0;
+	char err = 0;					//error message flag
 	char res[3], menu[3];
 	do
 	{
-		system("clear");
-		printf("What would you like to do?\n1. Add\n2. Subtract\n3. Multiply\n4. Factorial\n5. Exit\nResult: ");
-		for(int i = 0; i < result->used; i++)
+		//system("clear"); uncomment if using Linux
+		//system("cls") if using Windows
+		printf("What would you like to do?\n1. Add\n2. Subtract\n3. Multiply\n4. Factorial\n5. Exit\nResult: "); //User's menu
+		for(int i = 0; i < result->used; i++)		//Displaying actual result
 			printf("%d", result->array[i]);
 		
 		printf("\n");
@@ -31,7 +53,11 @@ int main(void)
 			cleanBuff();
 		}
 		cleanBuff();
-		
+		/**
+		 * @note Our functions (+,-,*) don't work on negative numbers, so I did some work with signs
+		 * to deny its influence on program.
+		 * 
+		 */
 		if(menu[0] == '1')
 		{
 			ask(res);
@@ -40,26 +66,26 @@ int main(void)
 				DynArray* arr2 =  createDynArray();
 				printf("Insert second number:\n");
 				arr2 = scanDynArray(arr2);
-				if(result->array[0] < 0 && arr2->array[0] < 0)
+				if(result->array[0] < 0 && arr2->array[0] < 0) // -a + (-b) = -(a + b)
 				{
 					FlipSign(result);
 					FlipSign(arr2);
 					result = addition(result, arr2);
 					FlipSign(result);	
 				}
-				else if(result->array[0] < 0 && arr2->array[0] >= 0)
+				else if(result->array[0] < 0 && arr2->array[0] >= 0) // -a + b = b - a
 				{
 					FlipSign(result);
 					result = subtraction(arr2, result);
 				}
-				else if(result->array[0] >= 0 && arr2->array[0] < 0)
+				else if(result->array[0] >= 0 && arr2->array[0] < 0) // a - b
 				{
 					FlipSign(arr2);
 					result = subtraction(result, arr2);
 				}
 				else
 				{
-					result = addition(result, arr2);
+					result = addition(result, arr2); // simply a + b
 				}
 			}
 			else
@@ -103,19 +129,19 @@ int main(void)
 				DynArray* arr2 = createDynArray();
 				printf("Insert second number:\n");
 				arr2 = scanDynArray(arr2);
-				if(result->array[0] < 0 && arr2->array[0] < 0)
+				if(result->array[0] < 0 && arr2->array[0] < 0) // -a - (-b) = b - a
 				{
 					FlipSign(result);
 					FlipSign(arr2);
 					result = subtraction(arr2, result);	
 				}
-				else if(result->array[0] < 0 && arr2->array[0] >= 0)
+				else if(result->array[0] < 0 && arr2->array[0] >= 0) // -a - b = -(a+b)
 				{
 					FlipSign(result);
 					result = addition(arr2, result);
 					FlipSign(result);
 				}
-				else if(result->array[0] >= 0 && arr2->array[0] < 0)
+				else if(result->array[0] >= 0 && arr2->array[0] < 0) // a - (-b) = a + b
 				{
 					FlipSign(arr2);
 					result = addition(result, arr2);
@@ -166,19 +192,19 @@ int main(void)
 				DynArray* arr2 = createDynArray();
 				printf("Insert second number:\n");
 				arr2 = scanDynArray(arr2);
-				if(result->array[0] < 0 && arr2->array[0] < 0)
+				if(result->array[0] < 0 && arr2->array[0] < 0) // - a * (-b) = a*b
 				{
 					FlipSign(result);
 					FlipSign(arr2);
 					result = multiply(arr2, result);	
 				}
-				else if(result->array[0] < 0 && arr2->array[0] >= 0)
+				else if(result->array[0] < 0 && arr2->array[0] >= 0) // -a * b = -(a*b)
 				{
 					FlipSign(result);
 					result = multiply(arr2, result);
 					FlipSign(result);
 				}
-				else if(result->array[0] >= 0 && arr2->array[0] < 0)
+				else if(result->array[0] >= 0 && arr2->array[0] < 0) // a*(-b) = -(a*b)
 				{
 					FlipSign(arr2);
 					result = multiply(result, arr2);

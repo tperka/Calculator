@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.13"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>My Project: src/Operations.c File Reference</title>
+<title>Large ints calculator: /home/tperka/Workspace/Projekt/src/Operations.c File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -28,7 +28,7 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">My Project
+   <div id="projectname">Large ints calculator
    </div>
   </td>
  </tr>
@@ -85,28 +85,32 @@ $(document).ready(function(){initNavTree('_operations_8c.html','');});
 <div class="title">Operations.c File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>This source file will contain mathematical operations on DynArrays.  
+<a href="#details">More...</a></p>
 <div class="textblock"><code>#include &quot;Arrays_management.h&quot;</code><br />
 <code>#include &quot;Operations.h&quot;</code><br />
-</div><div class="textblock"><div class="dynheader">
-Include dependency graph for Operations.c:</div>
-<div class="dyncontent">
-<div class="center"><img src="_operations_8c__incl.png" border="0" usemap="#src_2_operations_8c" alt=""/></div>
-<map name="src_2_operations_8c" id="src_2_operations_8c">
-</map>
-</div>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:a6b8f4671f264fbbee7b4e1ba9e0202c4"><td class="memItemLeft" align="right" valign="top">DynArray *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_operations_8c.html#a6b8f4671f264fbbee7b4e1ba9e0202c4">addition</a> (DynArray *arr1, DynArray *arr2)</td></tr>
+<tr class="memdesc:a6b8f4671f264fbbee7b4e1ba9e0202c4"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is something like overloaded + operator for our struct.  <a href="#a6b8f4671f264fbbee7b4e1ba9e0202c4">More...</a><br /></td></tr>
 <tr class="separator:a6b8f4671f264fbbee7b4e1ba9e0202c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a049cf6f20f82c6bc7d692adbc93600b2"><td class="memItemLeft" align="right" valign="top">DynArray *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_operations_8c.html#a049cf6f20f82c6bc7d692adbc93600b2">subtraction</a> (DynArray *arr1, DynArray *arr2)</td></tr>
+<tr class="memdesc:a049cf6f20f82c6bc7d692adbc93600b2"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is something like overloaded - operator for our struct.  <a href="#a049cf6f20f82c6bc7d692adbc93600b2">More...</a><br /></td></tr>
 <tr class="separator:a049cf6f20f82c6bc7d692adbc93600b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9cfad90597b61f9ba24f7cbbeccf642f"><td class="memItemLeft" align="right" valign="top">DynArray *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_operations_8c.html#a9cfad90597b61f9ba24f7cbbeccf642f">multiply</a> (DynArray *arr1, DynArray *arr2)</td></tr>
+<tr class="memdesc:a9cfad90597b61f9ba24f7cbbeccf642f"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is something like overloaded * operator for our struct.  <a href="#a9cfad90597b61f9ba24f7cbbeccf642f">More...</a><br /></td></tr>
 <tr class="separator:a9cfad90597b61f9ba24f7cbbeccf642f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a24675673d07465214a9d76c0d115b70e"><td class="memItemLeft" align="right" valign="top">DynArray *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_operations_8c.html#a24675673d07465214a9d76c0d115b70e">factorial</a> (DynArray *arr)</td></tr>
+<tr class="memdesc:a24675673d07465214a9d76c0d115b70e"><td class="mdescLeft">&#160;</td><td class="mdescRight">This function returns factorial of number stored in arr.  <a href="#a24675673d07465214a9d76c0d115b70e">More...</a><br /></td></tr>
 <tr class="separator:a24675673d07465214a9d76c0d115b70e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Function Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>This source file will contain mathematical operations on DynArrays. </p>
+<dl class="section author"><dt>Author</dt><dd>Tymoteusz Perka</dd></dl>
+<dl class="section date"><dt>Date</dt><dd>26/03/2019 </dd></dl>
+</div><h2 class="groupheader">Function Documentation</h2>
 <a id="a6b8f4671f264fbbee7b4e1ba9e0202c4"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a6b8f4671f264fbbee7b4e1ba9e0202c4">&#9670;&nbsp;</a></span>addition()</h2>
 
@@ -133,6 +137,17 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>This is something like overloaded + operator for our struct. </p>
+<p>At the beggining it reverses both arrays and checks if arr1 and arr2 have the same number of elements. If not, it fills the smaller one with zeros and then the addition is done from left to right (since our arrays are reversed) the same way you do it by your hand (summing numbers on every position and carrying overflow).</p>
+<dl class="section warning"><dt>Warning</dt><dd>Both arr1 and arr2 are freed after this operation.</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">Two</td><td>arrays we want to add. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Pointer to DynArray which is result of adding numbers stored in arr1 and arr2. </dd></dl>
+
 </div>
 </div>
 <a id="a24675673d07465214a9d76c0d115b70e"></a>
@@ -150,6 +165,16 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>This function returns factorial of number stored in arr. </p>
+<p>At the beginning it creates two DynArrays- counter and result, filling counter with 0 and result with 1. Then a copy of arr is done, help array created and initialised with 1. Result and arrcopy are multiplicated and stored as result and number stored in arr is reduced by one using help array(something like &ndash;). It is repeated as long as arr != 0. </p><dl class="section warning"><dt>Warning</dt><dd>Both arr is freed after this operation.</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">Array</td><td>we want to take factorial from. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Pointer to DynArray which is result of factorial. </dd></dl>
 
 </div>
 </div>
@@ -179,6 +204,17 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>This is something like overloaded * operator for our struct. </p>
+<p>At the beggining it checks if any of DynArrays represents zero. If yes, it returns 0 no matter what second array looks like. Otherwise it reverses arrays and then the multiplication is done from left to right (since our arrays are reversed) the same way you do it by your hand: Firstly, help array is created. Then all digits in arr1 are multiplied by the last digit in arr2, carring overflow to the next position and storing result as help. Then help is reversed and filled with as many zeros as iterations of the loop (which is also the position of number of arr 2 which we multiplicated by) and added to result. It repeats arr2-&gt;used times.</p>
+<dl class="section warning"><dt>Warning</dt><dd>Both arr1 and arr2 are freed after this operation.</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">Two</td><td>arrays we want to multiply. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Pointer to DynArray which is result of multiplying numbers stored in arr1 and arr2. </dd></dl>
+
 </div>
 </div>
 <a id="a049cf6f20f82c6bc7d692adbc93600b2"></a>
@@ -206,6 +242,18 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>This is something like overloaded - operator for our struct. </p>
+<p>At the beggining it checks which array stores larger number, reverses both arrays and checks if arr1 and arr2 have the same number of elements. If not, it fills the smaller one with zeros and then the subtraction is done from left to right (since our arrays are reversed) the same way you do it by your hand (subtracting numbers on every position and filling underflow by borrowing).</p>
+<dl class="section note"><dt>Note</dt><dd>This operation always returns positive number or zero since we subtract smaller number from bigger number.</dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Both arr1 and arr2 are freed after this operation.</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">Two</td><td>arrays we want to subtract. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Pointer to DynArray which is result of subtracting number stored in arr2 from arr1. </dd></dl>
 
 </div>
 </div>

@@ -12,13 +12,19 @@
 #define ARRAYS_MANAGEMENT_H
 
 #include <stdlib.h>
-
+/**
+ * @brief Our main struct on which we operate.
+ * 
+ * This is something like vector in C++. Using pointer instead of array allows us to malloc and realloc memory
+ * if we have overflow. I used char instead of int because we will only store single digits on each position.
+ * 
+ */
 typedef struct
 {
 	char *array;
     size_t used;
 	size_t size;
-} DynArray;
+}DynArray;
 
 void* AllocCheck(void *p);
 
